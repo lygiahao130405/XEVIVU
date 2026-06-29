@@ -1,109 +1,128 @@
 🚌 Hệ thống đặt vé xe khách (Bus Ticket Booking System)
 
-Đây là một ứng dụng web full-stack cho phép người dùng tìm chuyến xe, đặt vé, thanh toán online và nhận xác nhận qua email.
+Ứng dụng web full-stack cho phép người dùng tìm chuyến xe, đặt vé, thanh toán online và nhận xác nhận qua email.
 
-📌 Tính năng chính
+✨ Tính năng chính
 
-🔐 Đăng ký / đăng nhập tài khoản người dùng
+Đăng ký / đăng nhập người dùng
 
-🛡️ Mã hóa mật khẩu bằng bcrypt
+Mã hóa mật khẩu bằng bcrypt
 
-🎟️ Xem danh sách chuyến xe và đặt vé
+Xem danh sách chuyến xe & đặt vé
 
-💳 Tích hợp thanh toán trực tuyến qua MoMo Payment
+Thanh toán online qua MoMo Payment
 
-📧 Gửi email xác nhận sau khi đặt vé thành công (NodeMailer)
+Gửi email xác nhận sau khi đặt vé (NodeMailer)
 
-📊 Sử dụng MySQL để quản lý dữ liệu người dùng, chuyến xe và vé
+Quản lý dữ liệu bằng MySQL
 
-🔑 Xác thực API bằng JWT (JSON Web Token)
+Xác thực API bằng JWT
 
 🧰 Công nghệ sử dụng
 
-Frontend:
+Frontend
 
 HTML5
+
 CSS3
 JavaScript (Vanilla JS)
 
-Backend:
+Backend
 
 Node.js
+
 Express.js
 
-Cơ sở dữ liệu:
+Database
 
 MySQL
 
-Bảo mật & xác thực:
+Authentication & Security
 
 JWT (JSON Web Token)
+
 bcrypt
 
-Dịch vụ bên ngoài:
+External Services
 
 MoMo Payment API
-NodeMailer (gửi email)
-📂 Cấu trúc dự án
-/project-root
-│
-├── backend/
-│   ├── controllers/
-│   ├── routes/
-│   ├── models/
-│   ├── middlewares/
-│   ├── config/
-│   └── server.js
-│
-├── frontend/
-│   ├── html/
-│   ├── css/
-│   └── js/
-│
-├── database/
-│   └── schema.sql
-│
-└── README.md
-⚙️ Hướng dẫn cài đặt
-1. Clone project về máy
-git clone https://github.com/your-username/bus-ticket-system.git
-cd bus-ticket-system
-2. Cài đặt thư viện
-npm install
-3. Cấu hình biến môi trường
 
-Tạo file .env trong thư mục gốc:
+NodeMailer
+
+
+⚙️ Hướng dẫn cài đặt
+
+1. Clone project
+
+git clone https://github.com/lygiahao130405/XEVIVU.git
+
+cd bus-ticket-system
+
+2. Cài đặt dependencies
+
+npm install
+
+3. Tạo file môi trường .env
 
 PORT=5000
 
+
 DB_HOST=localhost
+
 DB_USER=root
+
 DB_PASSWORD=your_password
+
 DB_NAME=bus_booking
+
 
 JWT_SECRET=your_secret_key
 
-MOMO_PARTNER_CODE=your_momo_code
-MOMO_ACCESS_KEY=your_access_key
-MOMO_SECRET_KEY=your_secret_key
+
+MOMO_PARTNER_CODE=your_code
+
+MOMO_ACCESS_KEY=your_key
+
+MOMO_SECRET_KEY=your_secret
+
 
 EMAIL_USER=your_email@gmail.com
+
 EMAIL_PASS=your_email_password
+
 4. Import database
 
-Chạy file SQL vào MySQL:
-
 mysql -u root -p bus_booking < database/schema.sql
+
 5. Chạy project
+
 npm start
 
 Truy cập:
 
 http://localhost:5000
-📧 Chức năng gửi email
 
-Sau khi đặt vé thành công, hệ thống sẽ tự động gửi email xác nhận cho người dùng thông qua NodeMailer.
+📧 Hệ thống email
 
-💳 Thanh toán
+Sau khi đặt vé thành công, hệ thống tự động gửi email xác nhận qua NodeMailer.
 
-Dự án tích hợp MoMo Payment Gateway để mô phỏng quy trình thanh toán thực tế.
+💳 Thanh toán        
+
+Tích hợp MoMo Payment Gateway để xử lý thanh toán online.
+
+🚀 Hướng phát triển
+
+Thêm trang admin quản lý vé
+
+Nâng cấp UI bằng ReactJS
+
+Thêm chọn ghế ngồi
+
+Deploy lên Render / Railway / VPS
+
+👨‍💻 Tác giả
+Name: Lý Gia Hào
+
+GitHub: https://github.com/lygiahao130405
+
+Email: lyhao547@gmail.com
