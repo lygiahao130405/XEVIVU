@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đặt vé xe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Đặt vé xe</h1>
+    <form id="bookingForm">
+      <input type="text" name="name" placeholder="Tên bạn" required><br>
+      <input type="email" name="email" placeholder="Email" required><br>
+      <input type="text" name="from" placeholder="Điểm đi" required><br>
+      <input type="text" name="to" placeholder="Điểm đến" required><br>
+      <input type="date" name="date" required><br>
+      <select name="vehicleType">
+        <option value="limousine">Limousine</option>
+        <option value="bus">Xe khách</option>
+      </select><br>
+      <input type="number" name="quantity" placeholder="Số vé" required><br>
+      <button type="submit">Đặt vé và Thanh toán</button>
+    </form>
+    <p style="text-align:center; margin-top:10px">
+      <a href="login.html">Đăng nhập</a> | <a href="register.html">Đăng ký</a>
+    </p>
+  </div>
+  <script>
+    const form = document.getElementById('bookingForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form));
+      const res = await fetch('/api/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        const payRes = await fetch('/api/payment/momo', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ amount: 100000, orderId: 'VX-' + Date.now() })
+        });
+        const payData = await payRes.json();
+        if (payData.payUrl) window.location.href = payData.payUrl;
+      } else {
+        alert('Lỗi đặt vé');
+      }
+    });
+  </script>
+</body>
+</html>
