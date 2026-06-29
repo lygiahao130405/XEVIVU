@@ -3,13 +3,21 @@
 Đây là một ứng dụng web full-stack cho phép người dùng tìm chuyến xe, đặt vé, thanh toán online và nhận xác nhận qua email.
 
 📌 Tính năng chính
+
 🔐 Đăng ký / đăng nhập tài khoản người dùng
+
 🛡️ Mã hóa mật khẩu bằng bcrypt
+
 🎟️ Xem danh sách chuyến xe và đặt vé
+
 💳 Tích hợp thanh toán trực tuyến qua MoMo Payment
+
 📧 Gửi email xác nhận sau khi đặt vé thành công (NodeMailer)
+
 📊 Sử dụng MySQL để quản lý dữ liệu người dùng, chuyến xe và vé
+
 🔑 Xác thực API bằng JWT (JSON Web Token)
+
 🧰 Công nghệ sử dụng
 
 Frontend:
